@@ -1,8 +1,7 @@
 import { EmbedBuilder } from '@discordjs/builders'
-import { AudioPlayerStatus, AudioResource, createAudioPlayer, createAudioResource, joinVoiceChannel, StreamType } from '@discordjs/voice'
+import { AudioPlayerStatus, createAudioPlayer, createAudioResource, joinVoiceChannel, StreamType } from '@discordjs/voice'
 import { ApplicationCommandOptionType, CommandInteraction, GuildMember } from 'discord.js'
 import { Discord, Slash, SlashOption } from 'discordx'
-import { connect } from 'http2'
 import { getVoiceStream } from '../helpers/index.js'
 import { Quote } from '../models/quote.model.js'
 
