@@ -27,7 +27,7 @@ export class Cuppycake {
       guildId: interaction.member.guild.id,
       adapterCreator: interaction.member.guild.voiceAdapterCreator
     })
-    const resource = createAudioResource('src/assets/cuppycake.ogg')
+    const resource = createAudioResource('public/cuppycake.ogg')
 
     const subscription = connection.subscribe(player)
 

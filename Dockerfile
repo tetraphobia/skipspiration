@@ -12,6 +12,7 @@ RUN yarn
 
 # Move source files
 COPY src ./src
+COPY public ./public
 COPY tsconfig.json   .
 
 # Build project
@@ -31,6 +32,9 @@ RUN yarn --production
 
 # Move build files
 COPY --from=build-runner /tmp/app/build /app/build
+
+# Move cuppycake
+COPY --from=build-runner /tmp/app/public/cuppycake.ogg /app/public/cuppycake.ogg
 
 # Start bot
 CMD [ "yarn", "start" ]
