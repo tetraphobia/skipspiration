@@ -74,7 +74,7 @@ export class InspireMeCommand {
         .setAuthor({ name: 'Archives of Wisdom' })
         .setColor(0x0099FF)
         .setThumbnail(user.displayAvatarURL)
-        .setDescription(`"${randomQuote.quote}"\n\n- ${user.nickname}`)
+        .setDescription(`"${randomQuote.quote}"\n\n- ${user.displayName}`)
         .addFields(
           { name: 'Date Added', value: randomQuote.created_at.toLocaleDateString('en-us') }
         )
@@ -88,7 +88,7 @@ export class InspireMeCommand {
           guildId: interaction.member.guild.id,
           adapterCreator: interaction.member.guild.voiceAdapterCreator
         })
-        const stream = await getVoiceStream(user.nickname + ' says... ' + randomQuote.quote)
+        const stream = await getVoiceStream(user.displayName + ' says... ' + randomQuote.quote)
         const resource = createAudioResource(stream, { inputType: StreamType.Arbitrary, inlineVolume: true })
 
         const subscription = connection.subscribe(player)
